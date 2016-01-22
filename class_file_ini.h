@@ -12,11 +12,12 @@ class class_file_ini
 		bool modified;
 
 		void		read_file(std::string filename);
-		void		print_file(void);
 
 	public:
 		class_file_ini(std::string filename);
 		~class_file_ini(void);
+		
+		void		print_data(void);
 
 		int			get_int_value(const std::string &name);
 		std::string	get_string_value(const std::string &name);

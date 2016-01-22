@@ -4,9 +4,8 @@ using namespace std;
 
 class_file_ini::class_file_ini(string filename)
 {
-		this->read_file(filename);
-		this->print_file();
-		modified = false;
+	this->read_file(filename);
+	modified = false;
 }
 
 class_file_ini::~class_file_ini(void)
@@ -52,14 +51,14 @@ void		class_file_ini::read_file(string filename)
 	file.close();
 }
 
-void		class_file_ini::print_file(void)
+void		class_file_ini::print_data(void)
 {
 	map<string, string>::const_iterator it;
 
 	it = file_data.begin();
 	while (it != file_data.end())
 	{
-	    std::cout << it->first << "=" << it->second << std::endl;
+	    std::cout << it->first << "+" << it->second << std::endl;
 	    ++it;
 	}
 	std::cout << std::endl;
@@ -67,7 +66,7 @@ void		class_file_ini::print_file(void)
 
 int			class_file_ini::get_int_value(const std::string &name)
 {
-	int value;
+	int		value;
 
 	value = atoi(this->file_data[name].c_str());
 	return (value);
